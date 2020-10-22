@@ -1,0 +1,161 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+
+    <title>Port Scanner</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/maincss.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.css' %}">
+  </head>
+
+  <body>
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" onclick="location.href='{% url 'home' %}'"><h2>Port <em>scan</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" onclick="location.href='{% url 'home' %}'">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" title="Coming Soon !" onclick="location.href='{% url 'home' %}'">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" title="Coming Soon !" onclick="location.href='{% url 'home' %}'">Our Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" title="Coming Soon !" onclick="location.href='{% url 'home' %}'">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="header-text caption">
+              <h2><span style="font-size: 20px;">A free, responsive</span> Port Scanner.<br> <span style="font-size: 15px;">Created with love.❤</span></h2>
+              <div id="search-section">
+              	<form id="suggestion_form" name="gs">
+                <div class="searchText" >
+                  
+                  <input type="text" name="q" class="searchText" placeholder="{{ipaddr}}" readonly="readonly">
+              
+                </div>
+                    <input type="button" id="startScanBtn" name="results" class="main-button" value=" Light Scan " onclick="location.href='{% url 'script' %}'">
+                </form>
+              </div>   
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <span><h2>Scanned Result :</h2></span>
+                {% block content %}
+
+                {% endblock %}
+  
+              <br><br><br><br>              
+              <h2>What are Network Port ?</h2>
+              <p>
+                Network ports are the communication endpoints for a machine that is connected to the Internet. When a service listens on a port it can receive data from a client application, process it and communicate a response.<br><br>
+
+                Malicious client applications (ex. scripts, bots, malware) often exploit code found in the server software that let them get unauthorized access on the remote machine. This is one of the reasons why testing all ports is vital to achieving an in-depth security verification.<br><br>
+                
+                Port scanning is part of the first phase of a penetration test and allows you to find all network entry points available on a target system. The port scan techniques are different for TCP and UDP ports, that is why we have dedicated tools for each one.
+              </p><br><br><br><br>
+
+              <h2>What is a Port Scanner ?</h2>
+              <p>
+                Furthermore, the Port Scanner tool displays which ports on a network are open for communication. To clarify, whether or not a port is open can help with setting up IP security cameras, determining if a network is secure, as well as other network-related operations.<br><br>
+    
+                Therefore to begin, Click on 'Light Scan' at the top of the page. After that, you can Scroll Down to view result.
+              </p><br><br><br><br>
+
+              <h2> Why should I use Online Port Scanner ?</h2>
+              <p>
+                The main advantage of using an online version/ of the Nmap port scanner versus using it on your local machine is that it gives you an external view of your systems as they are seen by any hacker from the Internet. If you do the same scan from your internal network you may obtain different results because of various firewalls and network restrictions.<br><br>
+                <span>Furthermore, our port scanner is:</span><br>
+                 - Already configured and ready to run.<br>
+                 - Has an easy-to-use interface over the complex command line parameters of Nmap.<br>
+              </p><br><br><br><br>
+
+              <h2>Common Ports</h2>
+              <center><img src="static/images/common-ports-image.jpg" alt="Image Not Found." width="83%"></center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>About Us</h2>
+              </div>
+              <p>Port Scanner is a free website which displays open ports of your system.</p>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>More Information</h2>
+              </div>
+              <ul class="footer-list">
+                <li>Phone: <a href="#">010-020-0560</a></li>
+                <li>Email: <a href="#">mail@company.com</a></li>
+                <li>Support: <a href="#">support@company.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="sub-footer">
+              <p>Copyright &copy; 2020 Port Scanner 
+				- Designed by <a rel="nofollow" target="top" href="https://github.com/m-yash">Yash Mistry</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/owl.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/accordions.js' %}"></script>
+
+  </body>
+</html>
