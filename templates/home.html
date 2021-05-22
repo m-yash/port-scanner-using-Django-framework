@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if not open_ports %}
+        <span> {{msg}}</span>
+    {% endif %}
+    {% if open_ports %}
+        
+        <center>
+            <span>Execution completed in : {{ time }}s</span>
+            <table border="1" style="table-layout: fixed; width: 85%; text-align: center; vertical-align: middle;">
+                <tr>
+                    <th><span>Port Number</span></th>
+                    <th><span>State</span></th>
+                    <th><span>Service Name</span></th>
+                    <th><span>Service Information</span></th>
+                </tr>
+                {% for port in open_ports %}
+                    {% for portn in port_name %}
+                        <tr>
+                            <td>
+                                {{port}}
+                            </td>
+                            <td>
+                                Open
+                            </td>
+                            <td>
+                                {{portn}}
+                            </td>
+                            <td>
+                                <a target="top" href="https://google.com/search?q=What is port {{portn}} used for">{{portn}} Information</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </table>
+        </center>
+        <hr>
+    {% else %}
+        <br><span>{{closed}}</span><hr>
+    {% endif %}
+{% endblock %}
